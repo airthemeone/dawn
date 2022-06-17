@@ -424,27 +424,6 @@
 
                 {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
-                  
-                  <div>
-  {% if product.selling_plan_groups.size > 0 %}
-    <div>
-      <label for="plans">Selling plan:</label>
-      <select name="selling_plan" id="plans">
-        <option value="">One time purchase</option>
-        {% for variant in product.variants %}
-          <optgroup label="{{ variant.title }}">
-            {% for allocation in variant.selling_plan_allocations %}
-              <option value="{{ allocation.selling_plan.id }}">
-                {{ allocation.selling_plan.name }}
-              </option>
-            {% endfor %}
-           </optgroup>
-         {% endfor %}
-       </select>
-     </div>
-   {% endif %}
- </div>
-                  
                   <div class="product-form__buttons">
                     <button
                       type="submit"
