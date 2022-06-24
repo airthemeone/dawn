@@ -38,13 +38,6 @@
           "settings": {
           }
         },
-        "c2186b90-5403-4765-a1e5-5c16ddb8d1ac": {
-          "type": "shopify:\/\/apps\/paywhirl-subscription-payments\/blocks\/paywhirl-plan-selector\/41e95d60-82cf-46e8-84de-618d7e4c37b7",
-          "settings": {
-            "font_scale": 100,
-            "product": "{{product}}"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -106,7 +99,6 @@
         "price",
         "variant_picker",
         "quantity_selector",
-        "c2186b90-5403-4765-a1e5-5c16ddb8d1ac",
         "buy_buttons",
         "description",
         "collapsible-row-0",
