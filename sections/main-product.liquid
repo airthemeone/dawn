@@ -411,6 +411,28 @@
             </noscript>
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
+              
+            <div>
+              {% if product.selling_plan_groups.size > 0 %}
+                <div>
+                  <label for="plans">Selling plan:</label>
+                  <select name="selling_plan" id="plans">
+                    <option value="">One time purchase</option>
+                    {% for variant in product.variants %}
+                      <optgroup label="{{ variant.title }}">
+                        {% for allocation in variant.selling_plan_allocations %}
+                          <option value="{{ allocation.selling_plan.id }}">
+                            {{ allocation.selling_plan.name }}
+                          </option>
+                        {% endfor %}
+                       </optgroup>
+                     {% endfor %}
+                   </select>
+                 </div>
+               {% endif %}
+             </div>
+             
+              
               <product-form class="product-form" data-cart-type="{{ settings.cart_type }}">
                 <div class="product-form__error-message-wrapper" role="alert" hidden>
                   <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 13 13">
